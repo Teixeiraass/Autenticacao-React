@@ -1,10 +1,10 @@
 import { InputHTMLAttributes } from "react"
 
-interface LoginInputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string,
 }
 
-const LoginInput = ({label, ...rest}: LoginInputProps) => {
+const Input = ({label, ...rest}: InputProps) => {
     
 
     return(
@@ -15,4 +15,4 @@ const LoginInput = ({label, ...rest}: LoginInputProps) => {
     )
 }
 
-export default LoginInput;
+export default Input;

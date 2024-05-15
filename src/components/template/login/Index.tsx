@@ -1,7 +1,7 @@
 import LoginIcon from "./LoginIcon";
-import LoginInput from "./LoginInput";
+import Input from "../../ui/Input";
 
 export const Login = {
     Icon: LoginIcon,
-    Input: LoginInput,
+    Input: Input,
 }

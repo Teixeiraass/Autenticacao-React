@@ -2,6 +2,10 @@
 @tailwind components;
 @font-face {
     font-family: nunito;
-    src: url("./fonts/Nunito-Regular.ttf") format("ttf");
+    src: url("./fonts/Nunito-Regular.ttf")
 }
 @tailwind utilities;
+
+*{
+    font-family: nunito;
+}
