@@ -14,6 +14,7 @@ const LoginPage = () => {
                 <Login.Icon icon={Logo}/>
                 <Login.Input value={email} label="Email" type="email" placeholder="@gmail.com" onChange={e => setEmail(e.target.value)}/>
                 <Login.Input value={password} label="Password" type="password" placeholder="**********" onChange={e => setPassword(e.target.value)}/>
+                <Login.Button label="Sing in"/>
             </Card>
         </div>
     )
