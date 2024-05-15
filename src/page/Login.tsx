@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Logo from "../assets/Logo";
+import Logo from '../assets/B2Bit Logo.png'
 import Card from "../components/layout/Card/Card";
 import { Login } from "../components/template/login/Index";
+import Button from "../components/Button";
 
 const LoginPage = () => {
     const [email,setEmail] = useState('')
@@ -14,7 +15,7 @@ const LoginPage = () => {
                 <Login.Icon icon={Logo}/>
                 <Login.Input value={email} label="Email" type="email" placeholder="@gmail.com" onChange={e => setEmail(e.target.value)}/>
                 <Login.Input value={password} label="Password" type="password" placeholder="**********" onChange={e => setPassword(e.target.value)}/>
-                <Login.Button label="Sing in"/>
+                <Button label="Sing in"/>
             </Card>
         </div>
     )

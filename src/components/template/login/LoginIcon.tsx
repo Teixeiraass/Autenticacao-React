@@ -1,12 +1,10 @@
-import { ElementType } from "react"
-
 interface LoginIconProps {
-    icon: ElementType,
+    icon: string,
 }
 
-const LoginIcon = ({icon: Icon}: LoginIconProps) => {
+const LoginIcon = ({icon}: LoginIconProps) => {
     return(
-        <Icon />
+        <img src={icon} alt="Logo" />
     )
 }
 

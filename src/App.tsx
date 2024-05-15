@@ -1,9 +1,10 @@
-import Login from "./page/Login"
+import HomePage from "./page/Home"
+//import Login from "./page/Login"
 
 function App() {
   return (
     <>
-      <Login/>
+      <HomePage/>
     </>
   )
 }
