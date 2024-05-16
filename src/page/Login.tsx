@@ -3,11 +3,16 @@ import Logo from '../assets/B2Bit Logo.png'
 import Card from "../components/layout/Card/Card";
 import { Login } from "../components/template/login/Index";
 import Button from "../components/ui/Button";
-import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthProvider";
 
 const LoginPage = () => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
+    const { onLogin } = useAuth();
+
+    const handleSubmit = async () => {
+        await onLogin(email, password)
+    }
 
     function handleEmail(e: ChangeEvent<HTMLInputElement>){
         setEmail(e.target.value)
@@ -23,7 +28,7 @@ const LoginPage = () => {
                 <Login.Icon icon={Logo}/>
                 <Login.Input value={email} label="Email" type="email" placeholder="@gmail.com" onChange={e => handleEmail(e)}/>
                 <Login.Input value={password} label="Password" type="password" placeholder="**********" onChange={e => handlePassword(e)}/>
-                <Link  className="w-full" to={"/home"}><Button className="w-full h-[54px]" label="Sing in"/></Link>
+                <Button className="w-full h-[54px]" label="Sing in" onClick={handleSubmit}/>
             </Card>
         </div>
     )
