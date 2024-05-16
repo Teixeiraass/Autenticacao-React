@@ -4,14 +4,17 @@ import Card from "../components/layout/Card/Card";
 import { Login } from "../components/template/login/Index";
 import Button from "../components/ui/Button";
 import { useAuth } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const { handleLogin } = useAuth();
+    const navigate = useNavigate()
 
     const handleSubmit = async () => {
         await handleLogin(email, password)
+        navigate("/")
     }
 
     function handleEmail(e: ChangeEvent<HTMLInputElement>){
