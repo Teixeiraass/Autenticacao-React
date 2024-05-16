@@ -8,10 +8,10 @@ import { useAuth } from "../context/AuthProvider";
 const LoginPage = () => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
-    const { onLogin } = useAuth();
+    const { handleLogin } = useAuth();
 
     const handleSubmit = async () => {
-        await onLogin(email, password)
+        await handleLogin(email, password)
     }
 
     function handleEmail(e: ChangeEvent<HTMLInputElement>){

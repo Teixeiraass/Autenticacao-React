@@ -1,33 +1,20 @@
-import { PropsWithChildren, createContext, useContext, useState } from "react";
+import { PropsWithChildren, createContext, useContext } from "react";
 import api from "../service/Api";
-
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    is_active: boolean;
-    avatar: string | null;
-    type: string;
-    created: string;
-    modified: string;
-    role: string;
-}
+import { Navigate } from "react-router-dom";
+import { UserInterface } from "../components/interface/UserInterface";
 
 interface AuthContextProps {
-    user: User | null;
-    onLogin: (email: string, password: string) => Promise<void>;
-    onLogout: () => void;
+    handleLogin: (email: string, password: string) => Promise<void>;
+    handleLogout: () => void;
+    getUser: () => Promise<UserInterface> | void;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
-    const [user, setUser] = useState<User | null>(null);
-
     const handleLogin = async (email: string, password: string) => {
         try {
             const response = await api.post("/auth/login/", { email, password })
-            setUser(response.data.user)
             localStorage.setItem("accessToken", response.data.tokens.access);
         } catch (e) {
             console.log(e)
@@ -35,18 +22,22 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     }
 
     const handleLogout = () => {
-        setUser(null)
         localStorage.removeItem("accessToken");
+        <Navigate to={"/login"}/>
     }
 
-    const value = {
-        user,
-        onLogin: handleLogin,
-        onLogout: handleLogout,
-    };
+    const getUser = async () => {
+        try{
+            const response = await api.get("/auth/profile")
+            const user = response.data
+            return user
+        }catch(e) {
+            console.log('erro')
+        }
+    } 
 
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value={{ getUser, handleLogin, handleLogout}}>
             {children}
         </AuthContext.Provider>
     )

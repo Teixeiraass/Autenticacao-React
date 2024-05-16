@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import "./global.css"
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {RouterProvider, createBrowserRouter } from 'react-router-dom'
 import HomePage from './page/Home'
 import LoginPage from './page/Login'
 import { AuthProvider } from './context/AuthProvider'
@@ -11,11 +11,11 @@ import PublicRoute from './routes/PublicRoute'
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <PublicRoute><LoginPage/></PublicRoute>
+    element: <PublicRoute><LoginPage /></PublicRoute>
   },
   {
     path: "/",
-    element: <ProtectRoute><HomePage/></ProtectRoute>
+    element: <ProtectRoute><HomePage /></ProtectRoute>
   },
   {
     path: "*",
