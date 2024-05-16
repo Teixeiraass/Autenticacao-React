@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
             const response = await api.post("/auth/login/", { email, password })
             localStorage.setItem("accessToken", response.data.tokens.access);
         } catch (error: any) {
-            reportError({message: error.response.data})
+            throw new Error(error.response.data.detail)
         }
     }
 

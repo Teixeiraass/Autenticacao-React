@@ -5,16 +5,22 @@ import { Login } from "../components/template/login/Index";
 import Button from "../components/ui/Button";
 import { useAuth } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import LoginFailed from "../components/template/login/LoginFailed";
 
 const LoginPage = () => {
-    const [email,setEmail] = useState('')
-    const [password,setPassword] = useState('')
+    const [email,setEmail] = useState<string>('')
+    const [password,setPassword] = useState<string>('')
+    const [error, setError] = useState<string | null>(null)
     const { handleLogin } = useAuth();
     const navigate = useNavigate()
 
     const handleSubmit = async () => {
-        await handleLogin(email, password)
-        navigate("/")
+        try{
+            await handleLogin(email, password)
+            navigate("/")
+        }catch(error: any){
+            setError(error.message)
+        }
     }
 
     function handleEmail(e: ChangeEvent<HTMLInputElement>){
@@ -31,6 +37,7 @@ const LoginPage = () => {
                 <Login.Icon icon={Logo}/>
                 <Login.Input value={email} label="Email" type="email" placeholder="@gmail.com" onChange={e => handleEmail(e)}/>
                 <Login.Input value={password} label="Password" type="password" placeholder="**********" onChange={e => handlePassword(e)}/>
+                {error && <LoginFailed>{error}</LoginFailed>}
                 <Button className="w-full h-[54px]" label="Sing in" onClick={handleSubmit}/>
             </Card>
         </div>
