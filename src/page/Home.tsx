@@ -44,7 +44,7 @@ const HomePage = () => {
                 <div className="flex items-center justify-center h-[90%] bg-[#F1F5F9]">
                     <Card className="bg-[#fff] items-center p-5 gap-5 w-[356px]">
                         <h1>Profile picture</h1>
-                        <Home.Avatar avatar={user?.avatar} />
+                        <Home.Avatar avatar={user?.avatar}/>
                         <Home.Input label="Your Name" value={user?.name} readOnly />
                         <Home.Input label="Your Email" value={user?.email} readOnly />
                     </Card>

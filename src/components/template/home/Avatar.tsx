@@ -1,19 +1,15 @@
-import DefaultAvatar from '../../../assets/default-avatar.jpg'
+import DefaultAvatar from '../../../assets/avatar.jpg'
 
 interface AvatarProps {
-    avatar: string | null
+    avatar: string | undefined | null
 }
 
-const Avatar = ({avatar}: AvatarProps) => {
-    if(avatar){
-        return(
-            <img src={avatar} alt="Avatar" className='w-[77px] rounded-[8px]' />
-        )
-    }else{
-        return(
-            <img src={DefaultAvatar} alt="Default avatar" className='w-[77px]'/>
-        )
-    }
+const Avatar = ({ avatar }: AvatarProps) => {
+
+    return (
+        <img src={avatar || DefaultAvatar} alt="Avatar" className='w-[77px] rounded-[8px]' />
+    )
+
 }
 
 export default Avatar;

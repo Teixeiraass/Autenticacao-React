@@ -13,7 +13,7 @@ Node: https://nodejs.org/en
 Git: https://git-scm.com/downloads
 ```
 
-## 🪛 Instalação
+## 🛠 Instalação
 
 Como iniciar o projeto? Siga as instruções a baixo para poder ultilizar o projeto na sua maquina!
 
