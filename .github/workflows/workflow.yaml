@@ -1,0 +1,19 @@
+name: Desafio B2B
+
+on:  [pull_request, push]
+
+jobs:
+  desafio-b2b:
+    runs-on: ubunto-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20.x
+      - name: run install, build and test
+        run: |
+          npm install
+          npm run build
+          npm run test

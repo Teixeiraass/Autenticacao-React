@@ -1,15 +1,13 @@
-import DefaultAvatar from '../../../assets/avatar.jpg'
-
 interface AvatarProps {
     avatar: string | undefined | null
 }
 
-const Avatar = ({ avatar }: AvatarProps) => {
+const AvatarComponent = ({ avatar }: AvatarProps) => {
 
     return (
-        <img src={avatar || DefaultAvatar} alt="Avatar" className='w-[77px] rounded-[8px]' />
+        <img src={avatar || "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png"} alt="Avatar" className='w-[77px] rounded-[8px]' />
     )
 
 }
 
-export default Avatar;
+export default AvatarComponent;

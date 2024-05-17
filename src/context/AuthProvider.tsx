@@ -2,6 +2,7 @@ import { PropsWithChildren, createContext, useContext } from "react";
 import api from "../service/Api";
 import { Navigate } from "react-router-dom";
 import { UserInterface } from "../components/interface/UserInterface";
+import { AxiosError } from "axios";
 
 interface AuthContextProps {
     handleLogin: (email: string, password: string) => Promise<void>;
@@ -16,8 +17,12 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         try {
             const response = await api.post("/auth/login/", { email, password })
             localStorage.setItem("accessToken", response.data.tokens.access);
-        } catch (error: any) {
-            throw new Error(error.response.data.detail)
+        } catch (error: unknown) {
+            if (error instanceof AxiosError && error.response) {
+                throw new Error(error.response.data.detail);
+            } else {
+                throw new Error('An unexpected error occurred');
+            }
         }
     }
 

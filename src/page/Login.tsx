@@ -5,7 +5,6 @@ import Button from "../components/ui/Button";
 import { useAuth } from "../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import LoginFailed from "../components/template/login/LoginFailed";
-import Logo from '../assets/B2Bit Logo.png'
 
 const LoginPage = () => {
     const [email,setEmail] = useState<string>('')
@@ -18,12 +17,16 @@ const LoginPage = () => {
         try{
             await handleLogin(email, password)
             navigate("/")
-        }catch(error: any){
+        }catch(error: unknown){
             if(email == "" || password == ""){
                 setError("Os campos não podem estar em branco")
                 return
             }
-            setError(error.message)
+            if (error instanceof Error) {
+                setError(error.message);
+            } else {
+                setError("An unexpected error occurred");
+            }
         }
     }
 
@@ -38,7 +41,7 @@ const LoginPage = () => {
     return(
         <div className="flex justify-center items-center w-screen h-screen">
             <Card className="items-center gap-5 p-10 w-[480px] h-[534px]">
-                <Login.Icon icon={Logo}/>
+                <Login.Icon icon={"https://t3020915.p.clickup-attachments.com/t3020915/bf2d9f7a-af95-4206-bc81-0a8397fbb691/B2Bit%20Logo.png"}/>
                 <Login.Input value={email} label="Email" type="email" required placeholder="@gmail.com" onChange={e => handleEmail(e)}/>
                 <Login.Input value={password} label="Password" type="password" required placeholder="**********" onChange={e => handlePassword(e)}/>
                 {error && <LoginFailed>{error}</LoginFailed>}

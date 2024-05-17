@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
     const { handleLogout, getUser } = useAuth();
-    const [user, setUser] = useState<UserInterface | null>(null);
+    const [user, setUser] = useState<UserInterface | null | void>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const navigate = useNavigate()
 

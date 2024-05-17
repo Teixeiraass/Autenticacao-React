@@ -1,9 +1,9 @@
 import Loading from "../../layout/Card/Loading";
 import Input from "../../ui/Input";
-import Avatar from "./Avatar";
+import AvatarComponent from "./Avatar";
 
 export const Home = {
-    Avatar: Avatar,
+    Avatar: AvatarComponent,
     Input: Input,
     Loading: Loading
 }
