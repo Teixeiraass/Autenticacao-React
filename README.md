@@ -1,30 +1,50 @@
-# React + TypeScript + Vite
+# Desafio B2B
+<img src="../desafio-b2b/src/assets/B2Bit Logo.png">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Iniciando
+Siga as intruções para obter uma copia do projeto e roda em sua maquina
 
-Currently, two official plugins are available:
+## 📝 Pré-requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O que é necessario instalar para rodar o projeto?
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+Node: https://nodejs.org/en
+Git: https://git-scm.com/downloads
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 🪛 Instalação
+
+Como iniciar o projeto? Siga as instruções a baixo para poder ultilizar o projeto na sua maquina!
+
+```
+Clonar repositorio: git clone ""
+
+Instalar dependencias: npm i
+
+Rodar projeto: npm run dev
+```
+
+### Authenticação do projeto
+
+Utilize as seguintes credenciais para acessar a home page
+
+```
+Email: cliente@youdrive.com
+Senha: password
+```
+
+## 🧱 Tecnologias para contrução
+
+O projeto foi desenvolvido em React, mas utilizou algumas bibliotecas e tecnologias.
+
+* TypeScript 
+* Vite
+* React router dom
+* Axios
+
+## 🖊️ Autores
+
+Que desenvolveu:
+
+* Guilherme Teixeira | Criador:  https://github.com/Teixeiraas
