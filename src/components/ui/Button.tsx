@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     label: string,
-    className: string
+    className?: string
 }
 
 const Button = ({label, className, ...rest}: ButtonProps) => {
