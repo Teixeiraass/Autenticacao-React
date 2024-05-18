@@ -18,9 +18,10 @@ const HomePage = () => {
             try {
                 const userData = await getUser();
                 setUser(userData);
-                setLoading(false)
             } catch (error) {
                 setUser(null)
+            } finally {
+                setLoading(false)
             }
         };
         fetchUser();

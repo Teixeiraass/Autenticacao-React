@@ -1,5 +1,4 @@
 # Desafio B2B
-<img src="../desafio-b2b/src/assets/B2Bit Logo.png">
 
 ## Iniciando
 Siga as intruções para obter uma copia do projeto e roda em sua maquina

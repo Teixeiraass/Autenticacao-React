@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
             return user
         }catch(e) {
             console.log('erro')
+            return null;
         }
     } 
 

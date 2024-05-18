@@ -107,6 +107,5 @@ describe('LoginPage testes', () => {
         waitFor(() => {
             expect(navigateMock).toHaveBeenCalledWith('/');
         })
-
     });
 })
