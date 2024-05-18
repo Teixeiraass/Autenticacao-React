@@ -1,11 +1,22 @@
+
 export interface UserInterface {
-    id: number;
+    id: string;
     name: string;
+    last_name: string;
     email: string;
-    is_active: boolean;
-    avatar: string | null;
-    type: string;
-    created: string;
-    modified: string;
-    role: string;
+    role: {
+        value: number;
+        label: string;
+    };
+    last_login: string;
+    staff_role: {
+        value: number;
+        label: string;
+    };
+    avatar: {
+        id: number,
+        image_high_url: string
+        image_medium_url: string
+        image_low_url: string
+    } | undefined;
 }

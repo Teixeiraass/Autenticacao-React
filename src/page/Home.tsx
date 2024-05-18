@@ -32,6 +32,14 @@ const HomePage = () => {
         navigate('/login')
     }
 
+    const getName = () => {
+        const name = user?.name
+        const lastName = user?.last_name
+        const fullname = name != undefined && lastName !== undefined
+        if(fullname) return name + lastName 
+        else return name
+    }
+
     return (
         <Home.Loading loading={loading}>
             <div className="w-screen h-screen">
@@ -44,7 +52,7 @@ const HomePage = () => {
                     <Card className="bg-[#fff] items-center p-5 gap-5 w-[356px]">
                         <h1>Profile picture</h1>
                         <Home.Avatar avatar={user?.avatar} />
-                        <Home.Input label="Your Name" value={user?.name} readOnly />
+                        <Home.Input label="Your Name" value={getName()} readOnly />
                         <Home.Input label="Your Email" value={user?.email} readOnly />
                     </Card>
                 </div>
