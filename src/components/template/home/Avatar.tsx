@@ -1,12 +1,7 @@
+import { AvatarItensProps } from "../../interface/AvatarInterface";
+
 interface AvatarProps{
     avatar: AvatarItensProps;
-}
-
-interface AvatarItensProps {
-    id: number,
-    image_high_url: string
-    image_medium_url: string
-    image_low_url: string
 }
 
 const AvatarComponent = ({ avatar }: AvatarProps) => {

@@ -17,7 +17,7 @@ Git: https://git-scm.com/downloads
 Como iniciar o projeto? Siga as instruções a baixo para poder ultilizar o projeto na sua maquina!
 
 ```
-Clonar repositorio: git clone ""
+Clonar repositorio: git clone "https://github.com/Teixeiraass/desafio-b2b.git"
 
 Instalar dependencias: npm i
 
@@ -41,6 +41,7 @@ O projeto foi desenvolvido em React, mas utilizou algumas bibliotecas e tecnolog
 * Vite
 * React router dom
 * Axios
+* Tailwind
 
 ## 🖊️ Autores
 

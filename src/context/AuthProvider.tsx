@@ -2,12 +2,13 @@ import { PropsWithChildren, createContext, useContext } from "react";
 import api from "../service/Api";
 import { Navigate } from "react-router-dom";
 import { UserInterface } from "../components/interface/UserInterface";
+import { AvatarItensProps } from "../components/interface/AvatarInterface";
 import { AxiosError } from "axios";
 
 interface AuthContextProps {
     handleLogin: (email: string, password: string) => Promise<void>;
     handleLogout: () => void;
-    getUser: () => Promise<UserInterface> | void;
+    getUser: () => Promise<UserInterface> | AvatarItensProps | void;
 }
 
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
